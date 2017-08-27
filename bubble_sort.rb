@@ -1,6 +1,22 @@
-def bubble_sort(arr_to_sort)
+def bubble_sort(arr)
+  # takes an array and sorts it using bubble sort
+
+  length = arr.length
+
+  loop do
+    swapped = false
+    (length-1).times do |i|
+      if arr[i] > arr[i+1]
+        arr[i], arr[i+1] = arr[i+1], arr[i]
+        swapped = true
+      end
+    end
+    break unless swapped
+  end
+  arr
 end
 
 def bubble_sort_by(arr_to_sort)
   yield
+  10
 end
