@@ -9,12 +9,12 @@ describe 'bubble_sort' do
   end
 end
 
-#output = bubble_sort_by(['hey', 'hi', 'hello']) do |left, right|
- # left.length - right.length
-#end
+result = bubble_sort_by(['hey', 'hi', 'hello']) do |left, right|
+  left.length - right.length
+end
 
-#describe 'bubble_sort_by' do
- # it 'sorts an array but accepts a block' do
-  #  expect(output).to eq(['hi', 'hey', 'hello'])
- # end
-#end
+describe 'bubble_sort_by' do
+  it 'sorts an array but accepts a block' do
+    expect(result).to eq(['hi', 'hey', 'hello'])
+  end
+end
