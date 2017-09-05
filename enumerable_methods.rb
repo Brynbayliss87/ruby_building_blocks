@@ -16,4 +16,15 @@ module Enumerable
     end
   end
 
+  def my_select
+    # returns an array with elements
+    # that the block returns true for
+
+    result = []
+    self.my_each do |i|
+      result << i if yield(i) == true
+    end
+    result
+  end
+
 end
