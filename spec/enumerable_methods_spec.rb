@@ -21,6 +21,11 @@ describe 'Enumerable' do
     expect(@result).to eq([1, 3, 5, 7, 9])
   end
 
+  it 'my_select' do
+    @result = [1, 2, 3, 4, 5].my_select{|i| i.even?}
+    expect(@result).to eq([2, 4])
+  end
+
 end
 
 
