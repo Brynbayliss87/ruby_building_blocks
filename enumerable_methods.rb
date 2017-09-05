@@ -8,4 +8,12 @@ module Enumerable
     end
   end
 
+  def my_each_with_index
+    # iterates an array with an index 
+
+    self.length.times do |i|
+      yield(self[i], i)
+    end
+  end
+
 end
