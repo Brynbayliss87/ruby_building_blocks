@@ -37,6 +37,14 @@ module Enumerable
     true
   end
 
-  
+  def my_any?
+    # passes elements to a block
+    # returns true if the block returns true
 
-end
+    self.my_each do |word|
+      return true if yield(word)
+    end
+    false
+  end
+
+end 
