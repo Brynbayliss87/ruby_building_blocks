@@ -26,6 +26,11 @@ describe 'Enumerable' do
     expect(@result).to eq([2, 4])
   end
 
+  it 'my_all' do
+    @result = ['ant', 'bear', 'cat'].my_all?{|word| word.length <= 4}
+    expect(@result).to eq(true)
+  end
+
 end
 
 
