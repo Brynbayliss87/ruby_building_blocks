@@ -31,6 +31,11 @@ describe 'Enumerable' do
     expect(@result).to eq(false)
   end
 
+  it 'my_any?' do
+    @result = ['ant', 'bear', 'cat'].my_any?{|word| word == 'cat'}
+    expect(@result).to eq(true)
+  end
+
 end
 
 
