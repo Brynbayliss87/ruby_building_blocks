@@ -27,4 +27,14 @@ module Enumerable
     result
   end
 
+  def my_all?
+    # passes each element to a block
+    # returns true if the block never returns false or nil
+
+    self.my_each do |word|
+      return false unless yield(word)
+    end
+    true
+  end
+
 end
