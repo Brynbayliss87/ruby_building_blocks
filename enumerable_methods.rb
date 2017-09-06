@@ -47,4 +47,14 @@ module Enumerable
     false
   end
 
+  def my_none?
+    # passes all elements to a block
+    # returns true if all elements never return true
+
+    self.my_each do |word|
+      return false if yield(word)
+    end
+    true
+  end
+
 end 

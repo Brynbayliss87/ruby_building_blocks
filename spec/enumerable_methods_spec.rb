@@ -36,6 +36,11 @@ describe 'Enumerable' do
     expect(@result).to eq(false)
   end
 
+  it 'my_none?' do
+    @result = ['ant', 'bear', 'cat'].my_none?{|word| word.length > 4}
+    expect(@result).to eq(true)
+  end
+
 end
 
 
