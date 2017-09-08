@@ -57,4 +57,26 @@ module Enumerable
     true
   end
 
+  def my_count(*arg)
+    # returns number of elements that match argument
+    # or returns number of elements that return true if a block is given
+    # returns number of elements if no argument is supplied
+
+    block_result = []
+
+    if block_given?
+      self.my_each do |elem|
+        block_result << elem if yield(elem)
+      end
+      return block_result.length
+    elsif arg.empty?
+      return self.length
+    else 
+      self.my_each do |elem|
+        block_result << elem if elem == arg[0]
+      end
+      return block_result.length
+    end
+  end
+
 end 
