@@ -1,7 +1,6 @@
 require 'spec_helper'
 require './enumerable_methods'
 
-
 describe 'my_each and my_each_with_index' do
   before(:each) do
     @result = []
@@ -24,35 +23,35 @@ end
 
 describe 'my_select' do
   it 'my_select returns an array wih elements that arent false' do
-    @result = [1, 2, 3, 4, 5].my_select{|i| i.even?}
+    @result = [1, 2, 3, 4, 5].my_select(&:even?)
     expect(@result).to eq([2, 4])
   end
 end
 
 describe 'my_all' do
   it 'my_all returns true if block never returns false or nil' do
-    @result = ['ant', 'bear', 'cat'].my_all?{|word| word.length <= 3}
+    @result = %w[ant bear cat].my_all? { |word| word.length <= 3 }
     expect(@result).to eq(false)
   end
 end
 
 describe 'my_any?' do
   it 'my_any? returns true if any element returns true' do
-    @result = ['ant', 'bear', 'cat'].my_any?{|word| word == 'dog'}
+    @result = %w[ant bear cat].my_any? { |word| word == 'dog' }
     expect(@result).to eq(false)
   end
 end
 
 describe 'my_none?' do
   it 'my_none? returns true if the block never returns true' do
-    @result = ['ant', 'bear', 'cat'].my_none?{|word| word.length > 4}
+    @result = %w[ant bear cat].my_none? { |word| word.length > 4 }
     expect(@result).to eq(true)
   end
 end
 
 describe 'my_count' do
   it 'my count returns the number of items if no argument is given' do
-    @result = [1 , 2, 3, 4, 5].my_count
+    @result = [1, 2, 3, 4, 5].my_count
     expect(@result). to eq(5)
   end
 
@@ -62,7 +61,7 @@ describe 'my_count' do
   end
 
   it 'counts the number of elements in a block yielding a true value' do
-    @result = [2, 3, 4, 6, 8, 9].my_count{|x| x%2 ==0}
+    @result = [2, 3, 4, 6, 8, 9].my_count(&:even?)
     expect(@result).to eq(4)
   end
 end

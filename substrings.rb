@@ -17,7 +17,6 @@ def substrings(string, dictionary)
     word = word.downcase
 
     dictionary.each do |sub|
-
       if dict_counter.include?(sub)
         dict_counter[sub] += 1 if word.include?(sub)
       else dict_counter[sub] = 1 if word.include?(sub)
@@ -26,5 +25,3 @@ def substrings(string, dictionary)
   end
   dict_counter
 end
-
-

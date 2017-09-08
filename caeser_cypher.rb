@@ -1,17 +1,17 @@
-def shift_string(c, shift) 
+def shift_string(c, shift)
   # helper method to move character along using ascii table
   c = c.ord
   if c + shift <= 122
     c += shift
   else
     c = c + shift - 122
-       c = 96 + c
+    c = 96 + c
   end
   c.chr
 end
 
 def caeser(string, shift)
-  # a method that takes a string and a shift factor 
+  # a method that takes a string and a shift factor
   # and returns an encoded string
   # by shifting each character along by the factor
 
@@ -22,16 +22,15 @@ def caeser(string, shift)
     if caps.include?(c)
       c = c.downcase
       c = shift_string(c, shift).upcase
-      newstring += c  
-    elsif  chars.include?(c)
+      newstring += c
+    elsif chars.include?(c)
       c = shift_string(c, shift)
       newstring += c
     else
       newstring += c
-    end      
+    end
   end
   newstring
 end
 
-puts caeser("What A string!", 5)
-
+puts caeser('What A string!', 5)
